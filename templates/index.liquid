@@ -1,0 +1,36 @@
+{% block content %}
+	{% collection "events" by 1 %}
+	{% for post in collection.items %}
+	<section id="next-event" class="container">
+		<aside class="column one-third">
+			<p class="lead">Our next event is<br>{{ post.happening }}</p>
+			<div class="flyer">
+				<img src="/assets/img/flyers/thumbs/{{ post.flyer }}" alt="" class="round" />
+				<a href="/assets/img/flyers/{{ post.flyer }}" class="btn small-btn white-btn">View Flyer</a>
+			</div>
+		</aside>
+		<article class="column two-thirds">
+			{{ post.body }}
+			<a href="{{ post.link }}" target="_blank" class="btn orange-btn btn-rsvp"><span>RSVP</span></a><a href="https://goo.gl/maps/MDUro" target="_blank" class="btn dark-btn btn-map"><span>View Map</span></a>
+		</article>
+	</section>
+	{% endfor %}
+	{% endcollection %}
+	<section id="about-ppn" class="container orange-container">
+		<aside class="column one-third">
+			<p class="lead">What is PPN?  It's sort of like TED, but drunker and better.</p>
+		</aside>
+		<article class="column two-thirds">
+			<p>Presentation Party Night is a monthly lecture series based in Bushwick, Brooklyn, and founded on the idea that everyone has something to teach. Our goal was to create a forum for learning and progressive discussion in our community, but to make it free and fun. PPN combines a party atmosphere with informational programming to make a raucous celebration of peer education, food, and beer. Our events happen on the 3rd Sunday of every month. Everything is totally free and open to the public - we provide beer and food (potluck style - bring something to share) and we survive on donations from the audience.</p>
+		</article>
+	</section>
+	<section id="last-event" class="container">
+		<h3 class="text-center">Photos from last month's Presentation Party Night</h3>
+		<div class="gallery clearfix">
+		</div>
+		<p class="text-center" style="margin: 0;">Check out all past events in <strike>the archive</strike> coming soon!</p>
+	</section>
+	<div class="overlay">
+		<img src="april_flyer.jpg" alt="" />
+	</div>
+{% endblock %}
